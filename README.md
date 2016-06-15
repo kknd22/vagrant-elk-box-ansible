@@ -1,7 +1,7 @@
 This vagrant box installs elasticsearch 2.1, logstash 2.1 and kibana 4.3
-This is meant to replace the old [Vagrant ELK box](https://github.com/comperiosearch/vagrant-elk-box),  where provisioning by puppet has been replaced by ansible.
+This is meant to replace the old [Vagrant ELK box](https://github.com/comperiosearch/vagrant-elk-box),  where provisioning by puppet has been replaced by ansible.  
 
-## Prerequisites
+## Prerequisites  
 
 [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www.vagrantup.com/) (minimum version 1.6)
 Other providers, like VMWare may work, not tested!
