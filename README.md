@@ -1,3 +1,5 @@
+This is forked from https://github.com/comperiosearch/vagrant-elk-box-ansible
+
 This vagrant box installs elasticsearch 2.1, logstash 2.1 and kibana 4.3
 This is meant to replace the old [Vagrant ELK box](https://github.com/comperiosearch/vagrant-elk-box),  where provisioning by puppet has been replaced by ansible.  
 
@@ -10,7 +12,7 @@ Other providers, like VMWare may work, not tested!
 This repo uses git submodules.
 To clone the repo, use the --recurse-submodules option.  The submodules contain role definitions and nothing will work without that, unfortunately.  
 
-    git clone --recurse-submodules  https://github.com/comperiosearch/vagrant-elk-box-ansible.git
+    git clone --recurse-submodules  https://github.com/kknd22/vagrant-elk-box-ansible.git
 
 If you need to pull in latest changes, please uses
 
@@ -65,6 +67,17 @@ Controlled by
 sudo service kibana
 
 ```
+
+## Sample logstash twitter configuration is from:  
+  https://github.com/elastic/examples/tree/master/ELK_twitter
+  ```
+  mkdir  twitter_elk_example
+cd twitter_elk_example
+wget https://raw.githubusercontent.com/elastic/examples/master/ELK_twitter/twitter_logstash.conf
+wget https://raw.githubusercontent.com/elastic/examples/master/ELK_twitter/twitter_template.json
+wget https://raw.githubusercontent.com/elastic/examples/master/ELK_twitter/twitter_kibana.json
+```
+
 
 ## Ansible provisioning
 Ansible is installed on the guest machine by the setup.sh bash script which is run as part of vagrant provisioning. Vagrant does actually have a "built-in" provisioner for ansible, but it runs on the host machine, making that option unavailable on windows. Myself being one of the unfortunate we roll our own setup installing ansible on the guest machine.  The last step in the provisioning script is running the playbook located at provisioning/playbook.yml. 
